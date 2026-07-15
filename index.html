@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MACAT — Málaga Cinematographic Audiovisual Team</title>
+  <meta name="description" content="Comunidad y productora audiovisual universitaria nacida en la Universidad de Málaga. Cortometrajes, documentales, videoclips, talleres y mucho más.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a class="nav__logo" href="#inicio">macat<span>.</span></a>
+
+      <div class="nav__links">
+        <a class="nav__link" href="#que-es">sobre nosotros</a>
+        <a class="nav__link" href="#proyectos">proyectos</a>
+        <a class="nav__link" href="#cinefila">cinéfila</a>
+        <a class="nav__link" href="#departamentos">departamentos</a>
+        <a class="nav__link" href="#equipo">equipo</a>
+        <a class="nav__link" href="#contacto">contacto</a>
+        <a class="btn btn--rec nav__cta" href="#unete">únete</a>
+      </div>
+
+      <button class="nav__burger" id="nav-burger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="nav__mobile" id="nav-mobile">
+  <a class="nav__link" href="#que-es">sobre nosotros</a>
+  <a class="nav__link" href="#proyectos">proyectos</a>
+  <a class="nav__link" href="#cinefila">málaga cinéfila</a>
+  <a class="nav__link" href="#departamentos">departamentos</a>
+  <a class="nav__link" href="#equipo">equipo</a>
+  <a class="nav__link" href="#galeria">galería</a>
+  <a class="nav__link" href="#contacto">contacto</a>
+  <a class="btn btn--rec" href="#unete" style="width:fit-content;margin-top:.5rem;">únete al equipo</a>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════ -->
+<section class="hero" id="inicio">
+  <div class="hero__bg" id="hero-bg"></div>
+  <div class="hero__overlay"></div>
+
+  <span class="hero__timecode" id="timecode">00:00:00:00</span>
+
+  <div class="container hero__content">
+
+    <div class="hero__logo-stage">
+      <h2 class="hero__logo">macat<span>.</span></h2>
+    </div>
+
+    <div class="hero__subtitles" id="hero-subtitles">
+      <p class="hero__tag hero__content-item" style="transition-delay:0.5s">UMA Experience · Universidad de Málaga · 2024</p>
+
+      <h1 class="hero__headline display-1">
+        <span class="hero__line hero__content-item" style="transition-delay:0.6s">hacemos cine.</span>
+        <em class="hero__content-item" style="transition-delay:0.7s">creamos oportunidades<br>construimos comunidad</em>
+      </h1>
+
+      <p class="hero__sub hero__content-item" style="transition-delay:0.8s">
+        MACAT es el equipo audiovisual universitario de la UMA. Cortometrajes, documentales, videoclips, festivales y mucho más — hechos por estudiantes con ganas de crear.
+      </p>
+
+      <div class="hero__ctas hero__content-item" style="transition-delay:0.9s">
+        <a class="btn btn--outline" href="#que-es">conocer macat</a>
+        <a class="btn btn--rec" href="#unete">únete al equipo</a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<div class="filmstrip" aria-hidden="true"></div>
+
+<!-- ════════════════════════════════════════════════════════════
+     QUÉ ES MACAT
+════════════════════════════════════════════════════════════ -->
+<section class="que-es section" id="que-es">
+  <div class="container">
+    <div class="que-es__inner">
+      <div class="que-es__left">
+        <p class="eyebrow" data-reveal>sobre nosotros</p>
+
+        <p class="que-es__text" data-reveal data-delay="1">
+          MACAT (<strong>Málaga Cinematographic Audiovisual Team</strong>) es una comunidad y productora audiovisual universitaria nacida dentro de la convocatoria <strong>UMA Experience</strong> de la Universidad de Málaga.
+          <br><br>
+          Conectamos a estudiantes apasionados por el cine, la comunicación y la creación audiovisual para <strong>desarrollar proyectos reales</strong>, aprender en equipo y generar oportunidades dentro y fuera de la universidad.
+        </p>
+
+        <div class="que-es__stats" data-reveal data-delay="2">
+          <div class="stat">
+            <div class="stat__number">8</div>
+            <div class="stat__label">departamentos</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number">60<span>+</span></div>
+            <div class="stat__label">estudiantes implicados</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number">4</div>
+            <div class="stat__label">proyectos en marcha</div>
+          </div>
+        </div>
+
+        <div style="margin-top:2.5rem;" data-reveal data-delay="3">
+          <a class="link-arrow" href="#proyectos">ver proyectos</a>
+        </div>
+      </div>
+
+      <div class="que-es__right" data-reveal="right">
+        <div class="que-es__img-wrap">
+          <img
+            class="que-es__img"
+            src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?auto=format&fit=crop&w=800&q=80"
+            alt="Equipo de MACAT trabajando en un set de rodaje"
+            loading="lazy"
+          >
+          <div class="que-es__badge">
+            <div class="que-es__badge-title">proyecto impulsado por</div>
+            <div class="que-es__badge-text">UMA Experience · Universidad de Málaga</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="quote-line" data-reveal>
+      <em>"nadie hace cine solo"</em> — y nosotros somos la prueba.
+    </p>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PROYECTOS DESTACADOS
+════════════════════════════════════════════════════════════ -->
+<section class="proyectos section section--gray" id="proyectos">
+  <div class="container">
+    <div class="proyectos__header" data-reveal>
+      <div>
+        <p class="eyebrow">proyectos destacados</p>
+        <h2 class="display-2" style="margin-top:.75rem;">lo que estamos<br>creando</h2>
+      </div>
+      <a class="link-arrow" href="#galeria">ver toda la galería</a>
+    </div>
+
+    <div class="proyectos__grid">
+
+      <!-- Card 1 — grande, ocupa 2 filas -->
+      <div class="proyecto-card" data-reveal>
+        <img
+          class="proyecto-card__img"
+          src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=900&q=80"
+          alt="Raíces — cortometraje de MACAT"
+          loading="lazy"
+        >
+        <div class="proyecto-card__overlay">
+          <div class="proyecto-card__status en-prod">en producción</div>
+          <p class="proyecto-card__cat">cortometraje · ficción</p>
+          <h3 class="proyecto-card__title">"Raíces"</h3>
+          <p class="proyecto-card__desc">
+            Ficción social de 15 minutos ambientada en el centro histórico de Málaga. Un relato sobre identidad, pertenencia y el precio del cambio urbano.
+          </p>
+          <div class="proyecto-card__meta">
+            <span class="proyecto-card__meta-item">Dir. Carlos Moreno</span>
+            <span class="proyecto-card__meta-item">·</span>
+            <span class="proyecto-card__meta-item">Prod. Lucía Fernández</span>
+            <span class="proyecto-card__meta-item">·</span>
+            <span class="proyecto-card__meta-item">18 participantes</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="proyecto-card" data-reveal data-delay="1">
+        <img
+          class="proyecto-card__img"
+          src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=700&q=80"
+          alt="Huella — documental universitario"
+          loading="lazy"
+        >
+        <div class="proyecto-card__overlay">
+          <div class="proyecto-card__status completado">completado</div>
+          <p class="proyecto-card__cat">documental</p>
+          <h3 class="proyecto-card__title">"Huella"</h3>
+          <p class="proyecto-card__desc">
+            30 minutos. El impacto de la UMA en la vida de cuatro generaciones de estudiantes malagueños. Mejor Documental — Muestra Audiovisual UMA 2024.
+          </p>
+          <div class="proyecto-card__meta">
+            <span class="proyecto-card__meta-item">Dir. Ana M. Castillo</span>
+            <span class="proyecto-card__meta-item">·</span>
+            <span class="proyecto-card__meta-item">12 participantes</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="proyecto-card" data-reveal data-delay="2">
+        <img
+          class="proyecto-card__img"
+          src="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?auto=format&fit=crop&w=700&q=80"
+          alt="Frequencies — videoclip musical"
+          loading="lazy"
+        >
+        <div class="proyecto-card__overlay">
+          <div class="proyecto-card__status completado">completado</div>
+          <p class="proyecto-card__cat">videoclip</p>
+          <h3 class="proyecto-card__title">"Frequencies"</h3>
+          <p class="proyecto-card__desc">
+            Videoclip para el dúo indie malagueño Cándido Mar. Rodado en una noche en la sala TeatroCervantes.
+          </p>
+          <div class="proyecto-card__meta">
+            <span class="proyecto-card__meta-item">Dir. Sofía Vega</span>
+            <span class="proyecto-card__meta-item">·</span>
+            <span class="proyecto-card__meta-item">8 participantes</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 — ocupa 2 columnas -->
+      <div class="proyecto-card" data-reveal data-delay="3">
+        <img
+          class="proyecto-card__img"
+          src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1200&q=80"
+          alt="Campus Vivo — cobertura audiovisual UMA"
+          loading="lazy"
+        >
+        <div class="proyecto-card__overlay">
+          <div class="proyecto-card__status en-prod">en curso</div>
+          <p class="proyecto-card__cat">cobertura audiovisual · serie</p>
+          <h3 class="proyecto-card__title">"Campus Vivo"</h3>
+          <p class="proyecto-card__desc">
+            Cobertura permanente de los eventos más relevantes de la Universidad de Málaga. Crónica audiovisual del campus hecha por y para estudiantes.
+          </p>
+          <div class="proyecto-card__meta">
+            <span class="proyecto-card__meta-item">Coord. Roberto Morales</span>
+            <span class="proyecto-card__meta-item">·</span>
+            <span class="proyecto-card__meta-item">proyecto abierto</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     MÁLAGA CINÉFILA
+════════════════════════════════════════════════════════════ -->
+<section class="cinefila section" id="cinefila">
+  <div class="container">
+    <div class="cinefila__inner">
+
+      <div class="cinefila__left" data-reveal>
+        <p class="cinefila__eyebrow">simbiosis con macat</p>
+        <h2 class="cinefila__title">málaga<br>cinéfila</h2>
+        <p class="cinefila__desc">
+          Málaga Cinéfila es una asociación juvenil que actúa como comunidad joven y altavoz en redes, agenda cultural de cineclubs y puerta de entrada a MACAT. No son proyectos enfrentados: se fortalecen mutuamente.
+        </p>
+        <p class="cinefila__desc">
+          Crearán su propio cineclub en la Facultad de Ciencias de la Comunicación, con proyecciones semanales de largometrajes y cortometrajes.
+        </p>
+
+        <p class="cinefila__quote">
+          "Mi tío dice que vivimos el triple de tiempo desde que se inventó el cine, porque las películas nos dan el doble de lo que sacamos en la vida."
+          <br><span class="cinefila__quote-attr">— Edward Yang</span>
+        </p>
+
+        <p class="cinefila__agenda-title">próxima proyección</p>
+
+        <div class="ticket">
+          <div class="ticket__main">
+            <div class="ticket__row">
+              <span class="ticket__label">ciclo</span>
+              <span class="ticket__film">"Cinema Sideral"<br>historias de otro tiempo</span>
+            </div>
+            <div class="ticket__cols">
+              <div class="ticket__col">
+                <span class="ticket__label">sesión 1</span>
+                <span class="ticket__time">16:30</span>
+                <span class="ticket__sub">La sombra de nuestros antepasados olvidados</span>
+              </div>
+              <div class="ticket__col">
+                <span class="ticket__label">sesión 2</span>
+                <span class="ticket__time">18:30</span>
+                <span class="ticket__sub">El estanque del demonio</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ticket__perf"></div>
+
+          <div class="ticket__stub">
+            <span class="ticket__label">sala</span>
+            <span class="ticket__stub-value">Aula Magna</span>
+            <span class="ticket__label ticket__label--sp">facultad</span>
+            <span class="ticket__stub-value ticket__stub-value--sm">CC. Comunicación</span>
+            <span class="ticket__code">MCF · 001</span>
+          </div>
+        </div>
+
+        <div class="cinefila__features">
+          <div class="cinefila__feat">
+            <div class="cinefila__feat-icon">01</div>
+            <div class="cinefila__feat-text">
+              <strong>sesiones semanales</strong>
+              <span>proyecciones de largometrajes y cortometrajes en la Facultad de CC. de la Comunicación</span>
+            </div>
+          </div>
+          <div class="cinefila__feat">
+            <div class="cinefila__feat-icon">02</div>
+            <div class="cinefila__feat-text">
+              <strong>puerta de entrada a macat</strong>
+              <span>comunidad joven y agenda cultural que conecta con los proyectos y departamentos de MACAT</span>
+            </div>
+          </div>
+          <div class="cinefila__feat">
+            <div class="cinefila__feat-icon">03</div>
+            <div class="cinefila__feat-text">
+              <strong>colaboraciones</strong>
+              <span>red de cineclubs universitarios, con proyectos afines como Polliwood (Valencia)</span>
+            </div>
+          </div>
+        </div>
+
+        <a class="btn btn--ghost-dark" href="https://www.instagram.com/malagacinefila" target="_blank" rel="noopener">entrar en málaga cinéfila</a>
+      </div>
+
+      <div class="cinefila__right" data-reveal="right" data-delay="2">
+        <img
+          class="cinefila__img"
+          src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80"
+          alt="Sesión de cine en el cineclub Málaga Cinéfila"
+          loading="lazy"
+        >
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     DEPARTAMENTOS
+════════════════════════════════════════════════════════════ -->
+<section class="departamentos section" id="departamentos">
+  <div class="container">
+    <div class="departamentos__header" data-reveal>
+      <p class="eyebrow">estructura interna</p>
+      <h2 class="display-2" style="margin-top:.75rem;">varios departamentos.<br>un equipo.</h2>
+      <p>MACAT está organizado como una productora real: áreas de soporte y áreas de producción, cada una con su propio espacio para aprender y crear.</p>
+    </div>
+
+    <h3 class="equipo__section-title" data-reveal style="margin-top:2rem;">áreas de soporte</h3>
+    <div class="departamentos__grid">
+      <div class="dept-card" data-reveal><div class="dept-card__name">Redes sociales y marketing</div><div class="dept-card__coord">Comunicación externa, contenido y estrategia de marca de MACAT.</div></div>
+      <div class="dept-card" data-reveal data-delay="1"><div class="dept-card__name">Eventos y agenda cultural</div><div class="dept-card__coord">Organización de proyecciones, rodajes abiertos y actividades del equipo.</div></div>
+      <div class="dept-card" data-reveal data-delay="2"><div class="dept-card__name">Diseño gráfico y comunicación</div><div class="dept-card__coord">Identidad visual, piezas gráficas y materiales de difusión.</div></div>
+      <div class="dept-card" data-reveal data-delay="3"><div class="dept-card__name">Administración y RRHH</div><div class="dept-card__coord">Gestión interna e incorporación de nuevos miembros al equipo.</div></div>
+    </div>
+
+    <h3 class="equipo__section-title" data-reveal style="margin-top:2.5rem;">áreas de producción</h3>
+    <div class="departamentos__grid">
+      <div class="dept-card dept-card--dark" data-reveal><div class="dept-card__name">Guion, dirección y producción</div><div class="dept-card__coord">Desarrollo de historias, dirección y producción ejecutiva.</div></div>
+      <div class="dept-card dept-card--dark" data-reveal data-delay="1"><div class="dept-card__name">Animación, VFX y arte</div><div class="dept-card__coord">Animación, efectos visuales y dirección de arte.</div></div>
+      <div class="dept-card dept-card--dark" data-reveal data-delay="2"><div class="dept-card__name">Fotografía, edición y sonido</div><div class="dept-card__coord">Dirección de fotografía, montaje, colorimetría y sonido.</div></div>
+      <div class="dept-card dept-card--dark" data-reveal data-delay="3"><div class="dept-card__name">Podcast, música y actuación</div><div class="dept-card__coord">Producción de podcast, composición musical e interpretación.</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     EQUIPO
+════════════════════════════════════════════════════════════ -->
+<section class="equipo section section--gray" id="equipo">
+  <div class="container">
+
+    <div class="equipo__header" data-reveal>
+      <p class="eyebrow">las personas detrás de macat</p>
+      <h2 class="display-2 equipo__title" style="margin-top:.75rem;">el equipo, <em>por ahora</em></h2>
+    </div>
+
+    <!-- MENTORES -->
+    <h3 class="equipo__section-title" data-reveal>profesorado mentor</h3>
+    <div class="equipo__grid">
+
+      <div class="equipo-card" data-reveal>
+        <div class="equipo-card__img-wrap">
+          <img class="equipo-card__img" src="public/team/rocio-de-la-maya.jpg" alt="Rocío de la Maya" loading="lazy">
+          <span class="equipo-card__dept">Mentora</span>
+        </div>
+        <div class="equipo-card__credit">
+          <span class="equipo-card__name">Rocío de la Maya</span>
+          <span class="equipo-card__leader"></span>
+          <span class="equipo-card__role">profesora mentora</span>
+        </div>
+      </div>
+
+      <div class="equipo-card" data-reveal data-delay="1">
+        <div class="equipo-card__img-wrap">
+          <img class="equipo-card__img" src="public/team/alejandro-alvarado.jpg" alt="Alejandro Alvarado" loading="lazy">
+          <span class="equipo-card__dept">Mentor</span>
+        </div>
+        <div class="equipo-card__credit">
+          <span class="equipo-card__name">Alejandro Alvarado</span>
+          <span class="equipo-card__leader"></span>
+          <span class="equipo-card__role">profesor mentor</span>
+        </div>
+      </div>
+
+      <div class="equipo-card" data-reveal data-delay="2">
+        <div class="equipo-card__img-wrap">
+          <img class="equipo-card__img" src="public/team/rafatal.jpg" alt="Rafatal" loading="lazy">
+          <span class="equipo-card__dept">Mentor</span>
+        </div>
+        <div class="equipo-card__credit">
+          <span class="equipo-card__name">Rafatal</span>
+          <span class="equipo-card__leader"></span>
+          <span class="equipo-card__role">profesor mentor</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ESTUDIANTES -->
+    <h3 class="equipo__section-title" data-reveal>estudiantes</h3>
+    <div class="equipo__grid">
+
+      <div class="equipo-card" data-reveal>
+        <div class="equipo-card__img-wrap">
+          <img class="equipo-card__img" src="public/team/noa-fito.jpg" alt="Noa Fito" loading="lazy">
+          <span class="equipo-card__dept">Líder</span>
+        </div>
+        <div class="equipo-card__credit">
+          <span class="equipo-card__name">Noa Fito</span>
+          <span class="equipo-card__leader"></span>
+          <span class="equipo-card__role">estudiante líder</span>
+        </div>
+      </div>
+
+      <div class="equipo-card" data-reveal data-delay="1">
+        <div class="equipo-card__img-wrap">
+          <img class="equipo-card__img" src="public/team/fatima-arjona.jpg" alt="Fátima Arjona" loading="lazy">
+          <span class="equipo-card__dept">Líder</span>
+        </div>
+        <div class="equipo-card__credit">
+          <span class="equipo-card__name">Fátima Arjona</span>
+          <span class="equipo-card__leader"></span>
+          <span class="equipo-card__role">estudiante líder</span>
+        </div>
+      </div>
+
+      <div class="equipo-card" data-reveal data-delay="2">
+        <div class="equipo-card__img-wrap">
+          <img class="equipo-card__img" src="public/team/alejandro-gil.jpg" alt="Alejandro Gil" loading="lazy">
+          <span class="equipo-card__dept">Secretario</span>
+        </div>
+        <div class="equipo-card__credit">
+          <span class="equipo-card__name">Alejandro Gil</span>
+          <span class="equipo-card__leader"></span>
+          <span class="equipo-card__role">estudiante secretario</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- COLABORADORES EXTERNOS -->
+    <h3 class="equipo__section-title" data-reveal style="margin-top:2.5rem;">colaboradores externos</h3>
+    <p style="text-align:center;color:var(--gray-400);font-size:0.9rem;max-width:520px;margin:0 auto;">
+      Próximamente — espacio reservado para profesionales, empresas y antiguos estudiantes que se sumen a MACAT.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     COLABORADORES Y PATROCINADORES
+════════════════════════════════════════════════════════════ -->
+<section class="colaboradores section" id="colaboradores">
+  <div class="container">
+    <div class="colabs__header" data-reveal>
+      <p class="eyebrow">apoyo institucional</p>
+      <h2 class="display-3" style="margin-top:.75rem;">colaboradores &amp; patrocinadores</h2>
+    </div>
+
+    <div class="colabs__block">
+      <p class="colabs__block-title">colaboradores institucionales</p>
+      <div class="colabs__strip" data-reveal>
+        <div class="colab-logo">
+          <span class="colab-logo__abbr">UMA</span>
+          <span class="colab-logo__name">Universidad de Málaga</span>
+        </div>
+        <div class="colab-logo">
+          <span class="colab-logo__abbr">COM</span>
+          <span class="colab-logo__name">Fac. Ciencias de la Comunicación</span>
+        </div>
+        <div class="colab-logo">
+          <span class="colab-logo__abbr">ING</span>
+          <span class="colab-logo__name">Esc. Ingenierías Industriales</span>
+        </div>
+        <div class="colab-logo">
+          <span class="colab-logo__abbr">CCU</span>
+          <span class="colab-logo__name">Contenedor Cultural UMA</span>
+        </div>
+        <div class="colab-logo">
+          <span class="colab-logo__abbr">IKE</span>
+          <span class="colab-logo__name">Cátedra IKEA UMA</span>
+        </div>
+        <div class="colab-logo">
+          <span class="colab-logo__abbr">SC</span>
+          <span class="colab-logo__name">Sala de Cineastas</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="colabs__block">
+      <p class="colabs__block-title">patrocinadores — próximamente</p>
+      <div class="colabs__strip" data-reveal data-delay="1" style="opacity:.4;">
+        <div class="colab-logo">
+          <span class="colab-logo__icon" style="font-size:2rem;color:var(--gray-200)">+</span>
+          <span class="colab-logo__name" style="color:var(--gray-400)">tu empresa aquí</span>
+        </div>
+        <div class="colab-logo">
+          <span class="colab-logo__icon" style="font-size:2rem;color:var(--gray-200)">+</span>
+          <span class="colab-logo__name" style="color:var(--gray-400)">tu empresa aquí</span>
+        </div>
+        <div class="colab-logo">
+          <span class="colab-logo__icon" style="font-size:2rem;color:var(--gray-200)">+</span>
+          <span class="colab-logo__name" style="color:var(--gray-400)">tu empresa aquí</span>
+        </div>
+      </div>
+      <p style="text-align:center;font-size:.8rem;color:var(--gray-400);margin-top:1.25rem;" data-reveal data-delay="2">¿Quieres aparecer aquí? <a href="#contacto" style="color:var(--black);font-weight:500;text-decoration:underline;text-decoration-color:var(--gray-200);">Hablemos</a></p>
+    </div>
+
+  </div>
+</section>
+
+<div class="filmstrip" aria-hidden="true"></div>
+
+<!-- ════════════════════════════════════════════════════════════
+     NOTICIAS
+════════════════════════════════════════════════════════════ -->
+<section class="noticias section section--gray" id="noticias">
+  <div class="container">
+    <div class="noticias__header" data-reveal>
+      <div>
+        <p class="eyebrow">actualidad</p>
+        <h2 class="display-2" style="margin-top:.75rem;">noticias</h2>
+      </div>
+      <a class="link-arrow" href="#">ver todas</a>
+    </div>
+
+    <div class="noticias__grid">
+
+      <article class="noticia-card" data-reveal>
+        <div class="noticia-card__img-wrap">
+          <img class="noticia-card__img" src="https://images.unsplash.com/photo-1533488765986-dfa2a9939acd?auto=format&fit=crop&w=700&q=80" alt="MACAT en la Muestra Audiovisual UMA" loading="lazy">
+        </div>
+        <div class="noticia-card__body">
+          <p class="noticia-card__cat">cortometraje</p>
+          <h3 class="noticia-card__title">MACAT presenta "Raíces" en la Muestra Audiovisual de la UMA</h3>
+          <p class="noticia-card__excerpt">El primer cortometraje de ficción del equipo se proyecta ante el claustro y más de doscientos estudiantes. El debate posterior deja claro que MACAT ha llegado para quedarse.</p>
+          <div class="noticia-card__meta">
+            <span class="noticia-card__date">10 Jul 2025</span>
+            <span class="noticia-card__arrow">→</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="noticia-card" data-reveal data-delay="1">
+        <div class="noticia-card__img-wrap">
+          <img class="noticia-card__img" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=700&q=80" alt="Taller iluminación cinematográfica" loading="lazy">
+        </div>
+        <div class="noticia-card__body">
+          <p class="noticia-card__cat">formación</p>
+          <h3 class="noticia-card__title">Taller de iluminación cinematográfica con Marcos Villanueva</h3>
+          <p class="noticia-card__excerpt">El colorista madrileño comparte secretos de iluminación y etalonaje con veintidós miembros del equipo en una sesión de cuatro horas que se repetirá este otoño.</p>
+          <div class="noticia-card__meta">
+            <span class="noticia-card__date">5 Jun 2025</span>
+            <span class="noticia-card__arrow">→</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="noticia-card" data-reveal data-delay="2">
+        <div class="noticia-card__img-wrap">
+          <img class="noticia-card__img" src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=700&q=80" alt="Málaga Cinéfila primera sesión" loading="lazy">
+        </div>
+        <div class="noticia-card__body">
+          <p class="noticia-card__cat">málaga cinéfila</p>
+          <h3 class="noticia-card__title">Málaga Cinéfila celebra su sesión inaugural con más de sesenta asistentes</h3>
+          <p class="noticia-card__excerpt">El cineclub de MACAT arranca con "El espíritu de la colmena" de Víctor Erice y una conversación sobre el cine como memoria. El éxito de la primera sesión garantiza la continuidad del proyecto.</p>
+          <div class="noticia-card__meta">
+            <span class="noticia-card__date">18 May 2025</span>
+            <span class="noticia-card__arrow">→</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     GALERÍA
+════════════════════════════════════════════════════════════ -->
+<section class="galeria section section--dark" id="galeria">
+  <div class="container">
+    <div class="galeria__header" data-reveal>
+      <p class="eyebrow">exposición audiovisual</p>
+      <h2 class="display-2" style="margin-top:.75rem;">galería</h2>
+      <p class="galeria__hint">desliza para recorrer la exposición →</p>
+    </div>
+
+    <div class="galeria__carousel">
+      <button class="galeria__nav galeria__nav--prev" id="gal-prev" aria-label="Imagen anterior">‹</button>
+
+      <div class="galeria__mosaic" id="gal-track">
+        <div class="gal-item">
+          <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80" alt="Rodaje en exterior" loading="lazy">
+          <img class="gal-item__frame" src="public/ChatGPT Image 15 jul 2026, 22_55_04.png" alt="" loading="lazy" aria-hidden="true">
+        </div>
+        <div class="gal-item">
+          <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=1200&q=80" alt="Behind the scenes" loading="lazy">
+          <img class="gal-item__frame" src="public/ChatGPT Image 15 jul 2026, 22_55_04.png" alt="" loading="lazy" aria-hidden="true">
+        </div>
+        <div class="gal-item">
+          <img src="https://images.unsplash.com/photo-1616469829941-c7200edec809?auto=format&fit=crop&w=1200&q=80" alt="Claqueta de inicio de toma" loading="lazy">
+          <img class="gal-item__frame" src="public/ChatGPT Image 15 jul 2026, 22_55_04.png" alt="" loading="lazy" aria-hidden="true">
+        </div>
+        <div class="gal-item">
+          <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80" alt="Mesa de edición" loading="lazy">
+          <img class="gal-item__frame" src="public/ChatGPT Image 15 jul 2026, 22_55_04.png" alt="" loading="lazy" aria-hidden="true">
+        </div>
+        <div class="gal-item">
+          <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1200&q=80" alt="Proyector de cine" loading="lazy">
+          <img class="gal-item__frame" src="public/ChatGPT Image 15 jul 2026, 22_55_04.png" alt="" loading="lazy" aria-hidden="true">
+        </div>
+        <div class="gal-item">
+          <img src="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?auto=format&fit=crop&w=1200&q=80" alt="Mesa de sonido y grabación" loading="lazy">
+          <img class="gal-item__frame" src="public/ChatGPT Image 15 jul 2026, 22_55_04.png" alt="" loading="lazy" aria-hidden="true">
+        </div>
+      </div>
+
+      <button class="galeria__nav galeria__nav--next" id="gal-next" aria-label="Siguiente imagen">›</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+  <span class="lightbox__close" id="lightbox-close" aria-label="Cerrar">✕</span>
+  <img id="lightbox-img" src="" alt="Imagen en detalle">
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     ÚNETE A MACAT
+════════════════════════════════════════════════════════════ -->
+<section class="unete section" id="unete">
+  <div class="container">
+
+    <div class="unete__hero" data-reveal>
+      <p class="eyebrow" style="color:rgba(255,255,255,.35);margin-bottom:1rem;">forma parte del equipo</p>
+      <h2 class="display-2" style="color:var(--white);">únete a macat</h2>
+      <p>No hace falta experiencia previa — solo ganas de aprender, crear y trabajar en equipo. Si tienes algo que aportar (aunque no sepas exactamente qué todavía), este es tu sitio.</p>
+    </div>
+
+    <!-- Proceso -->
+    <p class="eyebrow" style="color:rgba(255,255,255,.3);text-align:center;margin-bottom:1.5rem;" data-reveal>cómo unirte</p>
+    <div class="unete__proceso" data-reveal data-delay="1">
+      <div class="paso">
+        <div class="paso__num">01</div>
+        <div class="paso__title">rellena el formulario</div>
+        <div class="paso__desc">Cuéntanos quién eres, qué te gusta hacer y en qué departamento te gustaría participar.</div>
+      </div>
+      <div class="paso">
+        <div class="paso__num">02</div>
+        <div class="paso__title">conocemos</div>
+        <div class="paso__desc">Nos ponemos en contacto en 48 horas para una charla informal y sin compromisos.</div>
+      </div>
+      <div class="paso">
+        <div class="paso__num">03</div>
+        <div class="paso__title">primer proyecto</div>
+        <div class="paso__desc">Te incorporas directamente a un proyecto activo o a las reuniones semanales del equipo.</div>
+      </div>
+      <div class="paso">
+        <div class="paso__num">04</div>
+        <div class="paso__title">creas</div>
+        <div class="paso__desc">Participas, aprendes y contribuyes a hacer cine de verdad dentro de la universidad.</div>
+      </div>
+    </div>
+
+    <!-- Grid FAQ + Formulario -->
+    <div class="unete__grid">
+
+      <!-- FAQ -->
+      <div data-reveal>
+        <p class="eyebrow" style="color:rgba(255,255,255,.3);margin-bottom:1.5rem;">preguntas frecuentes</p>
+
+        <div class="faq__item">
+          <div class="faq__question">¿Necesito experiencia en cine o comunicación? <span class="faq__icon">+</span></div>
+          <div class="faq__answer">No. MACAT es un equipo de aprendizaje. Lo único que pedimos es compromiso con los proyectos y ganas de aprender. La experiencia la ganamos juntos.</div>
+        </div>
+
+        <div class="faq__item">
+          <div class="faq__question">¿Tengo que ser estudiante de la UMA? <span class="faq__icon">+</span></div>
+          <div class="faq__answer">En principio sí, aunque abrimos la puerta a colaboraciones puntuales con profesionales externos. Si eres de otra universidad, escríbenos igualmente.</div>
+        </div>
+
+        <div class="faq__item">
+          <div class="faq__question">¿Cuánto tiempo tengo que dedicar? <span class="faq__icon">+</span></div>
+          <div class="faq__answer">Depende del proyecto y del departamento. En general, las reuniones semanales duran 1-2 horas y los rodajes se organizan de manera que no interfieran con los estudios.</div>
+        </div>
+
+        <div class="faq__item">
+          <div class="faq__question">¿Puedo participar en más de un departamento? <span class="faq__icon">+</span></div>
+          <div class="faq__answer">Claro. Muchos miembros del equipo participan en dos o tres áreas. Lo importante es que tengas capacidad para comprometerte con lo que asumes.</div>
+        </div>
+
+        <div class="faq__item">
+          <div class="faq__question">¿Los proyectos cuentan para la carrera? <span class="faq__icon">+</span></div>
+          <div class="faq__answer">Estamos trabajando con el profesorado mentor para que algunos proyectos puedan acreditarse como actividades extracurriculares. Más novedades pronto.</div>
+        </div>
+
+      </div>
+
+      <!-- Formulario de incorporación -->
+      <div data-reveal data-delay="2">
+        <p class="eyebrow" style="color:rgba(255,255,255,.3);margin-bottom:1.5rem;">quiero unirme</p>
+
+        <form id="form-unete" novalidate>
+          <div class="form__group">
+            <label class="form__label" for="nombre">nombre completo</label>
+            <input class="form__input" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="email">correo electrónico</label>
+            <input class="form__input" type="email" id="email" name="email" placeholder="tu@email.com" required>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="carrera">carrera y facultad</label>
+            <input class="form__input" type="text" id="carrera" name="carrera" placeholder="ej. Comunicación Audiovisual, Ciencias de la Comunicación">
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="depto">departamento de interés</label>
+            <select class="form__select" id="depto" name="depto">
+              <option value="">selecciona un departamento…</option>
+              <option>Dirección</option>
+              <option>Producción</option>
+              <option>Guion</option>
+              <option>Fotografía / Cámara</option>
+              <option>Sonido</option>
+              <option>Dirección de Arte</option>
+              <option>Montaje / Color</option>
+              <option>VFX / Animación</option>
+              <option>Música</option>
+              <option>Comunicación / Marketing</option>
+              <option>Diseño / Redes Sociales</option>
+              <option>Eventos / Podcast</option>
+              <option>Distribución</option>
+              <option>Interpretación</option>
+              <option>No sé todavía</option>
+            </select>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="motivo">¿por qué quieres unirte?</label>
+            <textarea class="form__textarea" id="motivo" name="motivo" placeholder="Cuéntanos brevemente qué te atrae de MACAT y qué podrías aportar (o qué te gustaría aprender)…"></textarea>
+          </div>
+          <button class="btn btn--rec" type="submit" style="width:100%;justify-content:center;padding:1rem;">enviar solicitud</button>
+          <p class="form__note">Responderemos en menos de 48 horas. Sin compromisos, sin filtros duros — solo una charla para conocernos.</p>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Quote final inspiradora — tratamiento de cartel de cierre -->
+    <p class="unete__closing-quote" data-reveal>
+      "las mejores historias<br>todavía no se han rodado"
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     CONTACTO
+════════════════════════════════════════════════════════════ -->
+<section class="contacto section section--accent" id="contacto">
+  <div class="container">
+    <div class="contacto__inner">
+
+      <div class="contacto__info" data-reveal>
+        <p class="eyebrow" style="margin-bottom:1rem;">hablamos</p>
+        <h2 class="contacto__info-title">¿tienes una idea,<br>una colaboración<br>o simplemente quieres saber más?</h2>
+        <p>Estamos en la Universidad de Málaga y nos encanta recibir propuestas de proyectos, colaboraciones institucionales, patrocinios y, sobre todo, de nuevos miembros.</p>
+
+        <div class="contacto__data">
+          <div class="contacto__data-item">
+            <span class="contacto__data-label">email</span>
+            <span><strong>malagacineteam@gmail.com</strong> — correo oficial del equipo</span>
+          </div>
+          <div class="contacto__data-item">
+            <span class="contacto__data-label">lugar</span>
+            <span>Facultad de Ciencias de la Comunicación, <strong>Universidad de Málaga</strong></span>
+          </div>
+          <div class="contacto__data-item">
+            <span class="contacto__data-label">instagram</span>
+            <span><strong>@macat_uma</strong> · <strong>@malagacinefila</strong></span>
+          </div>
+        </div>
+
+        <div class="contacto__social">
+          <a class="social-btn" href="https://www.instagram.com/macat_uma" target="_blank" rel="noopener" aria-label="Instagram de MACAT">@macat_uma</a>
+          <a class="social-btn" href="https://www.instagram.com/malagacinefila" target="_blank" rel="noopener" aria-label="Instagram de Málaga Cinéfila">@malagacinefila</a>
+        </div>
+      </div>
+
+      <div class="contacto__form" data-reveal data-delay="2">
+        <form id="form-contacto" novalidate>
+          <div class="form__group">
+            <label class="form__label" for="c-nombre">nombre</label>
+            <input class="form__input" type="text" id="c-nombre" name="nombre" placeholder="Tu nombre o el de tu organización" required>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="c-email">email</label>
+            <input class="form__input" type="email" id="c-email" name="email" placeholder="tu@email.com" required>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="c-motivo">motivo del contacto</label>
+            <select class="form__select" id="c-motivo" name="motivo">
+              <option value="">selecciona…</option>
+              <option>Quiero unirme al equipo</option>
+              <option>Propuesta de colaboración</option>
+              <option>Patrocinio</option>
+              <option>Propuesta de proyecto</option>
+              <option>Prensa / Medios</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="c-mensaje">mensaje</label>
+            <textarea class="form__textarea" id="c-mensaje" name="mensaje" rows="5" placeholder="Cuéntanos qué tienes en mente…"></textarea>
+          </div>
+          <button class="btn btn--ghost" type="submit" style="width:100%;justify-content:center;padding:1rem;">enviar mensaje</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+
+      <div>
+        <div class="footer__logo">macat<span>.</span></div>
+        <p class="footer__tagline">Málaga Cinematographic Audiovisual Team.<br>Comunidad y productora audiovisual universitaria — Universidad de Málaga.</p>
+        <div class="footer__social">
+          <a class="footer__social-link" href="https://www.instagram.com/macat_uma" target="_blank" rel="noopener" aria-label="Instagram de MACAT">@macat_uma</a>
+          <a class="footer__social-link" href="https://www.instagram.com/malagacinefila" target="_blank" rel="noopener" aria-label="Instagram de Málaga Cinéfila">@malagacinefila</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer__nav-title">el proyecto</p>
+        <div class="footer__nav-links">
+          <a href="#que-es">qué es macat</a>
+          <a href="#proyectos">proyectos</a>
+          <a href="#cinefila">málaga cinéfila</a>
+          <a href="#galeria">galería</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer__nav-title">el equipo</p>
+        <div class="footer__nav-links">
+          <a href="#departamentos">departamentos</a>
+          <a href="#equipo">equipo</a>
+          <a href="#colaboradores">colaboradores</a>
+          <a href="#unete">únete</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer__nav-title">contacto</p>
+        <div class="footer__nav-links">
+          <a href="mailto:malagacineteam@gmail.com">malagacineteam@gmail.com</a>
+          <a href="#contacto">formulario de contacto</a>
+          <a href="#">aviso legal</a>
+          <a href="#">política de privacidad</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2025 MACAT — Málaga Cinematographic Audiovisual Team</p>
+      <div class="footer__legal">
+        <a href="#">Aviso legal</a>
+        <a href="#">Privacidad</a>
+        <a href="#">Cookies</a>
+      </div>
+      <p class="footer__uma">
+        Proyecto impulsado dentro de la convocatoria <strong style="color:rgba(255,255,255,.4);">UMA Experience</strong> de la Universidad de Málaga. Con el apoyo de las personas mentoras y de las entidades colaboradoras.
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>
