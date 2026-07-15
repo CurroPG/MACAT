@@ -1362,8 +1362,6 @@ ul, ol { list-style: none; }
 .noticia-card:hover .noticia-card__arrow { transform: translateX(4px); }
 
 /* ── 17. Galería ──────────────────────────────────────────── */
-.galeria {}
-
 .galeria__header {
   margin-bottom: clamp(2.5rem, 4vw, 4rem);
 }
@@ -1372,6 +1370,28 @@ ul, ol { list-style: none; }
   font-size: 0.8rem;
   color: var(--gray-400);
   margin-top: 0.75rem;
+}
+
+/* Marco decorativo — borde de TODA la sección (edge-to-edge), no solo
+   del contenedor. PNG sin alpha sobre fondo negro; screen hace
+   transparente el negro y deja solo el trazo blanco sobre la sección. */
+.galeria {
+  position: relative;
+  padding-block: clamp(140px, 16vw, 220px);
+}
+.galeria__frame-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+}
+.galeria .container {
+  position: relative;
+  z-index: 1;
 }
 
 .galeria__carousel {
@@ -1439,20 +1459,6 @@ ul, ol { list-style: none; }
   transition: transform 0.6s var(--ease);
 }
 .gal-item:hover img { transform: scale(1.06); }
-
-/* Marco decorativo — PNG sin alpha sobre fondo negro; screen hace transparente
-   el negro y deja solo el trazo blanco superpuesto a la foto */
-.gal-item__frame {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  transition: none;
-}
-.gal-item:hover .gal-item__frame { transform: none; }
 
 .galeria__nav {
   position: absolute;
