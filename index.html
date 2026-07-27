@@ -56,7 +56,10 @@
      HERO
 ════════════════════════════════════════════════════════════ -->
 <section class="hero" id="inicio">
-  <div class="hero__bg" id="hero-bg"></div>
+  <div class="hero__bg" id="hero-bg">
+    <div class="hero__bg-image"></div>
+    <div class="hero__bg-glow" aria-hidden="true"></div>
+  </div>
   <div class="hero__overlay"></div>
 
   <span class="hero__timecode" id="timecode">00:00:00:00</span>
@@ -267,6 +270,7 @@
      MÁLAGA CINÉFILA
 ════════════════════════════════════════════════════════════ -->
 <section class="cinefila section" id="cinefila">
+  <div class="popcorn-field" aria-hidden="true"></div>
   <div class="container">
     <div class="cinefila__inner">
 
@@ -279,6 +283,22 @@
         <p class="cinefila__desc">
           Crearán su propio cineclub en la Facultad de Ciencias de la Comunicación, con proyecciones semanales de largometrajes y cortometrajes.
         </p>
+
+        <div class="clapperboard" aria-hidden="true">
+          <svg viewBox="0 0 64 54" width="52" height="44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g class="clapperboard__top">
+              <rect x="4" y="4" width="56" height="12" rx="1.5" stroke="currentColor" stroke-width="2"/>
+              <line x1="10" y1="4" x2="16" y2="16" stroke="currentColor" stroke-width="2"/>
+              <line x1="20" y1="4" x2="26" y2="16" stroke="currentColor" stroke-width="2"/>
+              <line x1="30" y1="4" x2="36" y2="16" stroke="currentColor" stroke-width="2"/>
+              <line x1="40" y1="4" x2="46" y2="16" stroke="currentColor" stroke-width="2"/>
+              <line x1="50" y1="4" x2="56" y2="16" stroke="currentColor" stroke-width="2"/>
+            </g>
+            <rect x="4" y="16" width="56" height="34" rx="1.5" stroke="currentColor" stroke-width="2"/>
+            <line x1="4" y1="30" x2="60" y2="30" stroke="currentColor" stroke-width="1.4" opacity="0.5"/>
+            <line x1="24" y1="30" x2="24" y2="50" stroke="currentColor" stroke-width="1.4" opacity="0.5"/>
+          </svg>
+        </div>
 
         <p class="cinefila__quote">
           "Mi tío dice que vivimos el triple de tiempo desde que se inventó el cine, porque las películas nos dan el doble de lo que sacamos en la vida."
@@ -627,7 +647,7 @@
      GALERÍA
 ════════════════════════════════════════════════════════════ -->
 <section class="galeria section section--dark" id="galeria">
-  <img class="galeria__frame-img" src="public/ChatGPT Image 15 jul 2026, 22_55_04.png" alt="" aria-hidden="true">
+  <img class="galeria__frame-img" src="imagenes/fondo-galeria.png" alt="" aria-hidden="true">
 
   <div class="container">
     <div class="galeria__header" data-reveal>
@@ -637,7 +657,19 @@
     </div>
 
     <div class="galeria__carousel">
-      <button class="galeria__nav galeria__nav--prev" id="gal-prev" aria-label="Imagen anterior">‹</button>
+      <button class="galeria__nav galeria__nav--prev" id="gal-prev" aria-label="Imagen anterior">
+        <svg class="galeria__nav-reel" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="21" stroke="currentColor" stroke-width="1.4" fill="none"/>
+          <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="1.4" fill="none"/>
+          <circle cx="24" cy="9" r="2.4" fill="currentColor"/>
+          <circle cx="37" cy="17" r="2.4" fill="currentColor"/>
+          <circle cx="37" cy="31" r="2.4" fill="currentColor"/>
+          <circle cx="24" cy="39" r="2.4" fill="currentColor"/>
+          <circle cx="11" cy="31" r="2.4" fill="currentColor"/>
+          <circle cx="11" cy="17" r="2.4" fill="currentColor"/>
+        </svg>
+        <span class="galeria__nav-arrow">‹</span>
+      </button>
 
       <div class="galeria__mosaic" id="gal-track">
         <div class="gal-item">
@@ -660,7 +692,19 @@
         </div>
       </div>
 
-      <button class="galeria__nav galeria__nav--next" id="gal-next" aria-label="Siguiente imagen">›</button>
+      <button class="galeria__nav galeria__nav--next" id="gal-next" aria-label="Siguiente imagen">
+        <svg class="galeria__nav-reel" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="21" stroke="currentColor" stroke-width="1.4" fill="none"/>
+          <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="1.4" fill="none"/>
+          <circle cx="24" cy="9" r="2.4" fill="currentColor"/>
+          <circle cx="37" cy="17" r="2.4" fill="currentColor"/>
+          <circle cx="37" cy="31" r="2.4" fill="currentColor"/>
+          <circle cx="24" cy="39" r="2.4" fill="currentColor"/>
+          <circle cx="11" cy="31" r="2.4" fill="currentColor"/>
+          <circle cx="11" cy="17" r="2.4" fill="currentColor"/>
+        </svg>
+        <span class="galeria__nav-arrow">›</span>
+      </button>
     </div>
   </div>
 </section>
@@ -676,6 +720,7 @@
      ÚNETE A MACAT
 ════════════════════════════════════════════════════════════ -->
 <section class="unete section" id="unete">
+  <div class="popcorn-field" aria-hidden="true"></div>
   <div class="container">
 
     <div class="unete__hero" data-reveal>

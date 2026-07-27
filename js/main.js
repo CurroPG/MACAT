@@ -127,8 +127,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const amount = item.getBoundingClientRect().width + gap;
       galTrack.scrollBy({ left: dir * amount, behavior: 'smooth' });
     };
-    galPrev?.addEventListener('click', () => scrollByItem(-1));
-    galNext?.addEventListener('click', () => scrollByItem(1));
+    const spinReel = (btn, dir) => {
+      const reel = btn?.querySelector('.galeria__nav-reel');
+      if (!reel) return;
+      const current = parseFloat(reel.dataset.angle || '0');
+      const next = current + dir * 90;
+      reel.dataset.angle = String(next);
+      reel.style.transform = `rotate(${next}deg)`;
+    };
+
+    galPrev?.addEventListener('click', () => { scrollByItem(-1); spinReel(galPrev, -1); });
+    galNext?.addEventListener('click', () => { scrollByItem(1); spinReel(galNext, 1); });
 
     const activeObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -160,6 +169,99 @@ document.addEventListener('DOMContentLoaded', () => {
   lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
   lightboxClose.addEventListener('click', closeLightbox);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+  /* ── Palomitas — flotan suavemente en reposo y reaccionan al acercar el cursor ── */
+  (() => {
+    const sections = document.querySelectorAll('.cinefila, .unete');
+    if (!sections.length) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const isNarrow = window.matchMedia('(max-width: 768px)').matches;
+
+    const images = ['imagenes/palomita-1.png', 'imagenes/palomita-2.png', 'imagenes/palomita-3.png'];
+    const rand = (min, max) => min + Math.random() * (max - min);
+
+    sections.forEach(section => {
+      const field = section.querySelector(':scope > .popcorn-field');
+      if (!field) return;
+
+      const baseCount = Math.round(rand(10, 18));
+      const count = isNarrow ? Math.max(5, Math.round(baseCount / 2)) : baseCount;
+      const pieces = [];
+
+      for (let i = 0; i < count; i++) {
+        const size = rand(18, 36);
+        const rotation = rand(-28, 28);
+
+        const wrap = document.createElement('div');
+        wrap.className = 'popcorn-piece';
+        wrap.style.left = `${rand(2, 95)}%`;
+        wrap.style.top = `${rand(2, 95)}%`;
+
+        const idle = document.createElement('div');
+        idle.className = 'popcorn-idle';
+        idle.style.width = `${size}px`;
+        idle.style.height = `${size}px`;
+        idle.style.animationDuration = `${rand(6, 11)}s`;
+        idle.style.animationDelay = `-${rand(0, 10)}s`;
+
+        const react = document.createElement('div');
+        react.className = 'popcorn-react';
+        react.style.opacity = String(rand(0.35, 0.6));
+        react.style.backgroundImage = `url('${images[Math.floor(Math.random() * images.length)]}')`;
+        react.style.transform = `rotate(${rotation}deg)`;
+
+        idle.appendChild(react);
+        wrap.appendChild(idle);
+        field.appendChild(wrap);
+        pieces.push({ el: react, rotation });
+      }
+
+      // Sin cursor real, o el usuario pide menos movimiento: solo queda el flotado ambiental en CSS.
+      if (prefersReducedMotion || isTouch) return;
+
+      let mouseX = -9999, mouseY = -9999;
+      let ticking = false;
+      const threshold = 100;
+
+      const updateReaction = () => {
+        pieces.forEach(({ el, rotation }) => {
+          const rect = el.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          const dx = cx - mouseX;
+          const dy = cy - mouseY;
+          const dist = Math.hypot(dx, dy);
+
+          if (dist < threshold) {
+            const force = (threshold - dist) / threshold;
+            const pushX = (dx / (dist || 1)) * force * 26;
+            const pushY = (dy / (dist || 1)) * force * 26;
+            el.style.transform = `translate(${pushX}px, ${pushY}px) rotate(${rotation}deg)`;
+          } else {
+            el.style.transform = `rotate(${rotation}deg)`;
+          }
+        });
+        ticking = false;
+      };
+
+      section.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        if (!ticking) {
+          requestAnimationFrame(updateReaction);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      section.addEventListener('mouseleave', () => {
+        pieces.forEach(({ el, rotation }) => {
+          el.style.transform = `rotate(${rotation}deg)`;
+        });
+      });
+    });
+  })();
 
   /* ── Smooth scroll for anchor links ─────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {

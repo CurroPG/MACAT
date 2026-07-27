@@ -340,13 +340,44 @@ ul, ol { list-style: none; }
 .hero__bg {
   position: absolute;
   inset: 0;
-  background-image: url('public/10.jpg');
-  background-size: cover;
-  background-position: center 30%;
+  overflow: hidden;
   transform: scale(1.05);
   transition: transform 8s ease-out;
 }
 .hero__bg.loaded { transform: scale(1); }
+
+/* Fotografía de fondo — sala de cine vacía, vista hacia la pantalla.
+   Ken Burns continuo y muy sutil, independiente del transform que main.js
+   aplica al contenedor .hero__bg en el scroll (así no compiten por la misma propiedad). */
+.hero__bg-image {
+  position: absolute;
+  inset: 0;
+  background-image: url('../imagenes/hero-sala-vacia.jpg');
+  background-size: cover;
+  background-position: center 35%;
+  animation: hero-kenburns 26s ease-in-out infinite alternate;
+}
+@keyframes hero-kenburns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+
+/* Resplandor de pantalla — pulso muy suave, como si proyectara luz cambiante */
+.hero__bg-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 44% 30% at 50% 35%, rgba(205, 222, 255, 0.55), transparent 70%);
+  animation: hero-screen-glow 5s ease-in-out infinite alternate;
+}
+@keyframes hero-screen-glow {
+  from { opacity: 0.15; }
+  to   { opacity: 0.3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__bg-image { animation: none; }
+  .hero__bg-glow { animation: none; opacity: 0.2; }
+}
 
 .hero__overlay {
   position: absolute;
@@ -789,6 +820,26 @@ ul, ol { list-style: none; }
   line-height: 1.75;
   color: rgba(255,255,255,0.6);
   margin-bottom: 2.5rem;
+}
+
+/* Claqueta — motivo ilustrado línea fina, se abre levemente al hover */
+.clapperboard {
+  display: inline-flex;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  padding-top: 10px;
+  overflow: visible;
+}
+.clapperboard svg {
+  overflow: visible;
+}
+.clapperboard__top {
+  transform-box: fill-box;
+  transform-origin: 0% 100%;
+  transition: transform 0.35s var(--ease);
+}
+.cinefila__left:hover .clapperboard__top {
+  transform: rotate(-13deg);
 }
 
 .cinefila__quote {
@@ -1477,7 +1528,7 @@ ul, ol { list-style: none; }
   justify-content: center;
   cursor: pointer;
   z-index: 2;
-  transition: all 0.2s var(--ease);
+  transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
 }
 .galeria__nav:hover {
   background: var(--accent);
@@ -1486,6 +1537,26 @@ ul, ol { list-style: none; }
 }
 .galeria__nav--prev { left: -4px; }
 .galeria__nav--next { right: -4px; }
+
+/* Motivo de carrete de película — anillo tras la flecha, gira al cambiar de slide.
+   La rotación se acumula en JS (transform inline) en vez de usar una keyframe que
+   siempre vuelve a 0deg, para que clics seguidos no produzcan un salto/atasco visual. */
+.galeria__nav-reel {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: currentColor;
+  opacity: 0.55;
+  transition: opacity 0.2s var(--ease), transform 0.5s var(--ease);
+  transform: rotate(0deg);
+}
+.galeria__nav:hover .galeria__nav-reel { opacity: 0.9; }
+.galeria__nav-arrow { position: relative; z-index: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .galeria__nav-reel { transition: opacity 0.2s var(--ease); }
+}
 
 /* Lightbox */
 .lightbox {
@@ -1520,8 +1591,13 @@ ul, ol { list-style: none; }
 
 /* ── 18. Únete ────────────────────────────────────────────── */
 .unete {
+  position: relative;
   background: var(--black);
   color: var(--white);
+}
+.unete .container {
+  position: relative;
+  z-index: 1;
 }
 
 .unete__hero {
@@ -1906,6 +1982,47 @@ ul, ol { list-style: none; }
 }
 .filmstrip::before { top: 4px; }
 .filmstrip::after   { bottom: 4px; }
+
+/* ── 21bis. Palomitas — flotan muy suavemente en reposo y reaccionan al cursor ── */
+.popcorn-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.popcorn-piece {
+  position: absolute;
+}
+
+/* Flotado ambiental — leve vaivén, independiente de la reacción al cursor
+   (se anima en un elemento distinto para no pisar el transform que pone el JS) */
+.popcorn-idle {
+  animation-name: popcorn-idle-float;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes popcorn-idle-float {
+  from { transform: translate(-4px, -5px); }
+  to   { transform: translate(4px, 5px); }
+}
+
+.popcorn-react {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  will-change: transform;
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .popcorn-idle { animation: none; }
+  .popcorn-react { transition: none; }
+}
 
 /* ── 21. Misc helpers ─────────────────────────────────────── */
 .text-accent { color: var(--accent); }
