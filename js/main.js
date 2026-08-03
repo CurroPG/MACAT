@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── Palomitas — flotan suavemente en reposo y reaccionan al acercar el cursor ── */
   (() => {
-    const sections = document.querySelectorAll('.cinefila, .unete');
+    const sections = document.querySelectorAll('.cinefila');
     if (!sections.length) return;
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

@@ -62,6 +62,11 @@
   </div>
   <div class="hero__overlay"></div>
 
+  <span class="reg-mark reg-mark--light reg-mark--tl" aria-hidden="true"></span>
+  <span class="reg-mark reg-mark--light reg-mark--tr" aria-hidden="true"></span>
+  <span class="reg-mark reg-mark--light reg-mark--bl" aria-hidden="true"></span>
+  <span class="reg-mark reg-mark--light reg-mark--br" aria-hidden="true"></span>
+
   <span class="hero__timecode" id="timecode">00:00:00:00</span>
 
   <div class="container hero__content">
@@ -99,8 +104,8 @@
 ════════════════════════════════════════════════════════════ -->
 <section class="que-es section" id="que-es">
   <div class="container">
-    <div class="que-es__inner">
-      <div class="que-es__left">
+    <div class="que-es__spread">
+      <div class="que-es__page que-es__page--text">
         <p class="eyebrow" data-reveal>sobre nosotros</p>
 
         <p class="que-es__text" data-reveal data-delay="1">
@@ -129,7 +134,7 @@
         </div>
       </div>
 
-      <div class="que-es__right" data-reveal="right">
+      <div class="que-es__page que-es__page--image" data-reveal="right">
         <div class="que-es__img-wrap">
           <img
             class="que-es__img"
@@ -141,6 +146,8 @@
             <div class="que-es__badge-title">proyecto impulsado por</div>
             <div class="que-es__badge-text">UMA Experience · Universidad de Málaga</div>
           </div>
+          <span class="reg-mark reg-mark--tl" aria-hidden="true"></span>
+          <span class="reg-mark reg-mark--br" aria-hidden="true"></span>
         </div>
       </div>
     </div>
@@ -151,6 +158,7 @@
   </div>
 </section>
 
+<div class="section-divider section-divider--light" aria-hidden="true"></div>
 
 <!-- ════════════════════════════════════════════════════════════
      PROYECTOS DESTACADOS
@@ -265,6 +273,7 @@
   </div>
 </section>
 
+<div class="section-divider section-divider--to-dark" aria-hidden="true"></div>
 
 <!-- ════════════════════════════════════════════════════════════
      MÁLAGA CINÉFILA
@@ -372,12 +381,15 @@
           alt="Sesión de cine en el cineclub Málaga Cinéfila"
           loading="lazy"
         >
+        <span class="reg-mark reg-mark--light reg-mark--tl" aria-hidden="true"></span>
+        <span class="reg-mark reg-mark--light reg-mark--br" aria-hidden="true"></span>
       </div>
 
     </div>
   </div>
 </section>
 
+<div class="section-divider section-divider--to-light" aria-hidden="true"></div>
 
 <!-- ════════════════════════════════════════════════════════════
      DEPARTAMENTOS
@@ -642,6 +654,7 @@
   </div>
 </section>
 
+<div class="section-divider section-divider--to-dark" aria-hidden="true"></div>
 
 <!-- ════════════════════════════════════════════════════════════
      GALERÍA
@@ -709,6 +722,8 @@
   </div>
 </section>
 
+<div class="section-divider section-divider--dark-accent" aria-hidden="true"></div>
+
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
   <span class="lightbox__close" id="lightbox-close" aria-label="Cerrar">✕</span>
@@ -720,17 +735,28 @@
      ÚNETE A MACAT
 ════════════════════════════════════════════════════════════ -->
 <section class="unete section" id="unete">
-  <div class="popcorn-field" aria-hidden="true"></div>
   <div class="container">
 
-    <div class="unete__hero" data-reveal>
-      <p class="eyebrow" style="color:rgba(255,255,255,.35);margin-bottom:1rem;">forma parte del equipo</p>
-      <h2 class="display-2" style="color:var(--white);">únete a macat</h2>
-      <p>No hace falta experiencia previa — solo ganas de aprender, crear y trabajar en equipo. Si tienes algo que aportar (aunque no sepas exactamente qué todavía), este es tu sitio.</p>
+    <div class="unete__intro">
+      <div class="unete__collage" aria-hidden="true">
+        <img class="collage-photo collage-photo--1" src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+        <img class="collage-photo collage-photo--2" src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+        <img class="collage-photo collage-photo--3" src="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+        <img class="collage-photo collage-photo--4" src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+        <img class="collage-photo collage-photo--5" src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+        <img class="collage-photo collage-photo--6" src="https://images.unsplash.com/photo-1616469829941-c7200edec809?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+        <img class="collage-photo collage-photo--7" src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+      </div>
+
+      <div class="unete__hero" data-reveal>
+        <p class="eyebrow" style="color:rgba(255,255,255,.6);margin-bottom:1rem;">forma parte del equipo</p>
+        <h2 class="display-2" style="color:var(--white);">únete a macat</h2>
+        <p>No hace falta experiencia previa — solo ganas de aprender, crear y trabajar en equipo. Si tienes algo que aportar (aunque no sepas exactamente qué todavía), este es tu sitio.</p>
+      </div>
     </div>
 
     <!-- Proceso -->
-    <p class="eyebrow" style="color:rgba(255,255,255,.3);text-align:center;margin-bottom:1.5rem;" data-reveal>cómo unirte</p>
+    <p class="eyebrow" style="color:rgba(255,255,255,.6);text-align:center;margin-bottom:1.5rem;" data-reveal>cómo unirte</p>
     <div class="unete__proceso" data-reveal data-delay="1">
       <div class="paso">
         <div class="paso__num">01</div>
@@ -759,7 +785,7 @@
 
       <!-- FAQ -->
       <div data-reveal>
-        <p class="eyebrow" style="color:rgba(255,255,255,.3);margin-bottom:1.5rem;">preguntas frecuentes</p>
+        <p class="eyebrow" style="color:rgba(255,255,255,.6);margin-bottom:1.5rem;">preguntas frecuentes</p>
 
         <div class="faq__item">
           <div class="faq__question">¿Necesito experiencia en cine o comunicación? <span class="faq__icon">+</span></div>
@@ -790,7 +816,7 @@
 
       <!-- Formulario de incorporación -->
       <div data-reveal data-delay="2">
-        <p class="eyebrow" style="color:rgba(255,255,255,.3);margin-bottom:1.5rem;">quiero unirme</p>
+        <p class="eyebrow" style="color:rgba(255,255,255,.6);margin-bottom:1.5rem;">quiero unirme</p>
 
         <form id="form-unete" novalidate>
           <div class="form__group">
@@ -845,6 +871,7 @@
   </div>
 </section>
 
+<div class="unete-divider" aria-hidden="true"></div>
 
 <!-- ════════════════════════════════════════════════════════════
      CONTACTO
