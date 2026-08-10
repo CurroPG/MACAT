@@ -538,21 +538,20 @@ ul, ol { list-style: none; }
   padding-block: clamp(100px, 15vw, 180px);
 }
 
-/* Spread tipo revista/libro abierto: textura real de doble página de
-   libro envejecido como fondo único de todo el bloque — el gutter/sombra
-   del lomo ya viene dibujado en la propia imagen, centrado, así que
-   coincide con la separación entre la página de texto y la de foto. */
+/* Fondo único de todo el bloque: foto con zona oscura a la izquierda,
+   donde se apoya la página de texto (color de fuente en blanco para
+   contrastar con esa mitad oscura de la imagen). */
 .que-es__spread {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: stretch;
+  display: flex;
+  align-items: center;
+  min-height: clamp(420px, 42vw, 620px);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.09);
   border-radius: 6px;
   overflow: hidden;
-  background-image: url('../imagenes/libro.png');
+  background-image: url('../imagenes/fondo-sobre-nostros.JPG');
   background-size: cover;
-  background-position: center;
+  background-position: left center;
 }
 
 .que-es__page {
@@ -562,26 +561,27 @@ ul, ol { list-style: none; }
   justify-content: center;
   padding: clamp(2.5rem, 5vw, 4rem);
 }
-.que-es__page--image { align-items: center; }
+.que-es__page--text {
+  width: 100%;
+  max-width: 560px;
+}
 
-/* Eyebrow y stat__label usan gris claro pensado para fondos blancos —
-   sobre la textura envejecida necesitan un tono más oscuro para leerse bien. */
 .que-es .eyebrow,
 .que-es .stat__label {
-  color: var(--gray-600);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .que-es__text {
   font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   font-weight: 300;
   line-height: 1.6;
-  color: var(--black);
+  color: var(--white);
   margin-top: 2rem;
   margin-bottom: 3rem;
 }
 .que-es__text strong {
   font-weight: 600;
-  color: var(--black);
+  color: var(--white);
 }
 
 .que-es__stats {
@@ -594,52 +594,16 @@ ul, ol { list-style: none; }
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 300;
   letter-spacing: -0.04em;
-  color: var(--black);
+  color: var(--white);
   line-height: 1;
 }
 .stat__number span { color: var(--accent); }
 
 .stat__label {
   font-size: 0.8rem;
-  color: var(--gray-400);
   letter-spacing: 0.06em;
   margin-top: 0.35rem;
   font-weight: 400;
-}
-
-.que-es__img-wrap {
-  position: relative;
-  width: 100%;
-}
-
-.que-es__img {
-  width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  border-radius: 2px;
-}
-
-.que-es__badge {
-  position: absolute;
-  bottom: -1.5rem;
-  left: -1.5rem;
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  padding: 1rem 1.5rem;
-  border-radius: 4px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-}
-.que-es__badge-title {
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--gray-400);
-  margin-bottom: 0.25rem;
-}
-.que-es__badge-text {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--black);
 }
 
 .quote-line {
@@ -666,127 +630,6 @@ ul, ol { list-style: none; }
   font-weight: 500;
   color: var(--black);
   font-family: var(--font-accent);
-}
-
-/* ── 10. Proyectos ────────────────────────────────────────── */
-.proyectos { }
-
-.proyectos__header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 2rem;
-  margin-bottom: clamp(3rem, 5vw, 5rem);
-  flex-wrap: wrap;
-}
-
-.proyectos__grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 1.5rem;
-}
-
-.proyecto-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 3px;
-  cursor: pointer;
-  background: var(--gray-100);
-}
-
-.proyecto-card:nth-child(1) { grid-row: span 2; }
-.proyecto-card:nth-child(4) { grid-column: span 2; }
-
-.proyecto-card__img {
-  width: 100%;
-  height: 100%;
-  min-height: 300px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.7s var(--ease);
-}
-.proyecto-card:hover .proyecto-card__img {
-  transform: scale(1.04);
-}
-
-.proyecto-card__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 55%);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 1.75rem;
-}
-
-.proyecto-card__status {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: var(--white);
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 0.3rem 0.7rem;
-  border-radius: 2px;
-  margin-bottom: 0.75rem;
-  width: fit-content;
-}
-.proyecto-card__status::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: currentColor;
-}
-.proyecto-card__status.en-prod { color: var(--accent); }
-.proyecto-card__status.completado { color: #4CAF50; }
-
-.proyecto-card__cat {
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  margin-bottom: 0.4rem;
-}
-
-.proyecto-card__title {
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: var(--white);
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.02em;
-}
-
-.proyecto-card__desc {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.65);
-  line-height: 1.5;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.proyecto-card__meta {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.15);
-}
-
-.proyecto-card__meta-item {
-  font-size: 0.7rem;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 0.04em;
 }
 
 /* ── 11. Málaga Cinéfila ──────────────────────────────────── */
@@ -951,147 +794,6 @@ ul, ol { list-style: none; }
   object-fit: cover;
   border-radius: 3px;
   filter: grayscale(20%);
-}
-
-.cinefila__agenda-title {
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-  margin-bottom: 1rem;
-}
-
-/* ── Ticket de cine — "próxima proyección" como entrada real ─ */
-.ticket {
-  position: relative;
-  display: flex;
-  align-items: stretch;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.14);
-  margin-bottom: 2.5rem;
-  isolation: isolate;
-}
-
-/* Punch-holes a lo largo del borde superior e inferior */
-.ticket::before,
-.ticket::after {
-  content: '';
-  position: absolute;
-  left: 10px;
-  right: 10px;
-  height: 9px;
-  background-image: radial-gradient(circle, var(--black) 2.6px, transparent 3px);
-  background-size: 16px 9px;
-  background-repeat: repeat-x;
-  pointer-events: none;
-}
-.ticket::before { top: -5px; background-position: 0 -1px; }
-.ticket::after   { bottom: -5px; background-position: 0 4px; }
-
-.ticket__main {
-  flex: 1 1 auto;
-  padding: 1.75rem 1.75rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  min-width: 0;
-}
-
-.ticket__row {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.ticket__cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-
-.ticket__col {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.ticket__label {
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.ticket__label--sp { margin-top: 0.5rem; }
-
-.ticket__film {
-  font-family: var(--font-accent);
-  font-style: italic;
-  font-weight: 600;
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
-  line-height: 1.3;
-  color: var(--white);
-}
-
-.ticket__time {
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--white);
-  font-variant-numeric: tabular-nums;
-}
-
-.ticket__sub {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.45);
-  line-height: 1.4;
-}
-
-/* Línea de corte entre cuerpo y talón */
-.ticket__perf {
-  position: relative;
-  width: 0;
-  flex-shrink: 0;
-  border-left: 2px dashed rgba(255,255,255,0.22);
-  margin-block: 10px;
-}
-.ticket__perf::before,
-.ticket__perf::after {
-  content: '';
-  position: absolute;
-  left: -9px;
-  width: 18px;
-  height: 18px;
-  background: var(--black);
-  border-radius: 50%;
-}
-.ticket__perf::before { top: -9px; }
-.ticket__perf::after  { bottom: -9px; }
-
-.ticket__stub {
-  flex: 0 0 132px;
-  padding: 1.75rem 1.25rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  background: rgba(255,255,255,0.02);
-}
-
-.ticket__stub-value {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--white);
-  letter-spacing: -0.01em;
-}
-.ticket__stub-value--sm { font-size: 0.72rem; font-weight: 500; color: rgba(255,255,255,0.65); }
-
-.ticket__code {
-  margin-top: auto;
-  padding-top: 0.75rem;
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  color: rgba(255,255,255,0.3);
-  font-variant-numeric: tabular-nums;
 }
 
 /* ── 12. Departamentos ────────────────────────────────────── */
@@ -1687,12 +1389,17 @@ ul, ol { list-style: none; }
 
 .unete__intro {
   position: relative;
-  height: clamp(640px, 80vw, 860px);
+  aspect-ratio: 4 / 3;
+  min-height: 480px;
+  max-height: 900px;
   padding-inline: clamp(2.5rem, 6vw, 4.5rem);
   margin-bottom: clamp(5rem, 8vw, 8rem);
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url('../imagenes/todos.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .unete__hero {
@@ -1711,6 +1418,64 @@ ul, ol { list-style: none; }
   color: rgba(255,255,255,0.9);
   line-height: 1.7;
   margin-top: 1.5rem;
+}
+
+/* Únete — transición pin: por defecto (y siempre que el usuario prefiera
+   menos movimiento) el collage/texto y el formulario se apilan en flujo
+   normal. Con motion permitido, la media query de abajo activa el
+   desplazamiento horizontal ligado 1:1 al scroll (mismo criterio que el
+   resto de scroll-linked transforms de la web, ver main.js). */
+.unete__transition-track {
+  display: block;
+}
+
+.unete__transition-panel {
+  width: 100%;
+}
+
+.unete__form-panel {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 2rem);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .unete__transition {
+    position: relative;
+    height: 200vh;
+  }
+  .unete__transition-track {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 200%;
+    display: flex;
+    overflow: hidden;
+    will-change: transform;
+  }
+  .unete__transition-panel {
+    flex: 0 0 50%;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: var(--nav-h);
+    box-sizing: border-box;
+  }
+  .unete__transition .unete__intro {
+    height: 100%;
+    margin-bottom: 0;
+  }
+  .unete__form-panel {
+    max-height: calc(100% - 2rem);
+    overflow-y: auto;
+    padding: 0 clamp(1.5rem, 4vw, 2rem);
+    margin: 0;
+  }
+  @media (max-width: 640px) {
+    .unete__transition { height: 180vh; }
+  }
 }
 
 .unete__proceso {
@@ -1755,7 +1520,8 @@ ul, ol { list-style: none; }
 
 .unete__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 640px);
+  justify-content: center;
   gap: clamp(3rem, 6vw, 8rem);
   margin-bottom: 4rem;
 }
@@ -1871,47 +1637,8 @@ ul, ol { list-style: none; }
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
-/* Únete — collage moodboard: fotos sueltas flotando sobre el rojo,
-   repartidas por toda la altura de .unete__intro alrededor del texto
-   centrado. .unete__intro es deliberadamente alto (ver arriba) y sin
-   overflow:hidden, para que ninguna foto necesite recortarse: el aire
-   vertical de sobra es lo que evita que lleguen a invadir "cómo unirte". */
-.unete__collage {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.collage-photo {
-  position: absolute;
-  object-fit: cover;
-  border: 6px solid var(--white);
-  border-radius: 2px;
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.4);
-}
-
-.collage-photo--1 { width: 31%; max-width: 325px; aspect-ratio: 3/4; top: 2%;    left: 2%;   transform: rotate(-6deg); }
-.collage-photo--2 { width: 26%; max-width: 273px; aspect-ratio: 4/3; top: 5%;    right: 3%;  transform: rotate(5deg); }
-.collage-photo--3 { width: 22%; max-width: 228px; aspect-ratio: 1/1; top: 38%;   left: -6%;  transform: rotate(-8deg); }
-.collage-photo--4 { width: 23%; max-width: 247px; aspect-ratio: 4/3; top: 42%;   right: -6%; transform: rotate(6deg); }
-.collage-photo--5 { width: 27%; max-width: 286px; aspect-ratio: 3/4; bottom: 4%; left: 0%;   transform: rotate(7deg); }
-.collage-photo--6 { width: 29%; max-width: 299px; aspect-ratio: 4/3; bottom: 2%; right: 1%;  transform: rotate(-4deg); }
-.collage-photo--7 { width: 21%; max-width: 215px; aspect-ratio: 4/3; bottom: 8%; left: 36%;  transform: rotate(3deg); }
-
-@media (max-width: 900px) {
-  .collage-photo--3, .collage-photo--4 { display: none; }
-}
-
 @media (max-width: 640px) {
-  .unete__intro { height: 560px; padding-inline: 1.5rem; }
-  .collage-photo--3,
-  .collage-photo--4,
-  .collage-photo--7 { display: none; }
-  .collage-photo--1 { width: 38%; top: 2%;    left: 2%; }
-  .collage-photo--2 { width: 32%; top: 4%;    right: 2%; }
-  .collage-photo--5 { width: 34%; bottom: 4%; left: 4%; }
-  .collage-photo--6 { width: 36%; bottom: 2%; right: 4%; }
+  .unete__intro { padding-inline: 1.5rem; }
 }
 
 /* Separador entre Únete y Contacto — tira de fotograma 35mm con
@@ -2086,6 +1813,22 @@ ul, ol { list-style: none; }
   border-color: var(--black);
   background: var(--black);
   color: var(--white);
+}
+
+.contacto__map {
+  margin-top: 2rem;
+  aspect-ratio: 4 / 3;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1.5px solid var(--gray-200);
+}
+.contacto__map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.contacto.section--accent .contacto__map {
+  border-color: rgba(255,255,255,0.25);
 }
 
 .contacto__form { }
@@ -2317,12 +2060,6 @@ ul, ol { list-style: none; }
 
 /* ── 22. Responsive ───────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .proyectos__grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .proyecto-card:nth-child(1) { grid-row: span 1; }
-  .proyecto-card:nth-child(4) { grid-column: span 1; }
-
   .footer__top {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
@@ -2335,19 +2072,6 @@ ul, ol { list-style: none; }
   .nav__burger { display: flex; }
   .nav__inner { padding: 0.5rem 1.1rem; }
 
-  /* Apilado: ya no hay lomo central visible, así que la textura se
-     reparte en dos mitades independientes, una por bloque. */
-  .que-es__spread { grid-template-columns: 1fr; background-image: none; }
-  .que-es__page--text {
-    background-image: url('../imagenes/libro.png');
-    background-size: 200% 100%;
-    background-position: left center;
-  }
-  .que-es__page--image {
-    background-image: url('../imagenes/libro.png');
-    background-size: 200% 100%;
-    background-position: right center;
-  }
   .cinefila__inner  { grid-template-columns: 1fr; }
   .cinefila__img    { aspect-ratio: 16/9; }
   .equipo__grid     { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
@@ -2359,8 +2083,6 @@ ul, ol { list-style: none; }
 @media (max-width: 640px) {
   :root { --nav-h: 60px; }
 
-  .proyectos__grid  { grid-template-columns: 1fr; }
-  .proyecto-card:nth-child(4) { grid-column: span 1; }
   .noticias__grid   { grid-template-columns: 1fr; }
   .unete__proceso   { grid-template-columns: 1fr 1fr; }
 
@@ -2383,20 +2105,6 @@ ul, ol { list-style: none; }
   .hero__timecode { display: none; }
 
   .contacto__social { flex-wrap: wrap; }
-
-  .ticket { flex-direction: column; }
-  .ticket__cols { grid-template-columns: 1fr; }
-  .ticket__perf {
-    width: auto;
-    height: 0;
-    border-left: none;
-    border-top: 2px dashed rgba(255,255,255,0.22);
-    margin: 0 10px;
-  }
-  .ticket__perf::before, .ticket__perf::after { top: -9px; left: -9px; }
-  .ticket__perf::after { left: auto; right: -9px; bottom: auto; }
-  .ticket__stub { flex: none; flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 0.6rem 1.25rem; }
-  .ticket__code { margin-top: 0; padding-top: 0; margin-left: auto; }
 }
 
 @media (max-width: 400px) {

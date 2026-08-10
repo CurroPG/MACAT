@@ -75,6 +75,28 @@ document.addEventListener('DOMContentLoaded', () => {
     updateHeroExit();
   }
 
+  /* ── Únete: transición pin — el collage+texto se desplaza a la
+     izquierda para revelar el formulario, ligado 1:1 al scroll ── */
+  const uneteTransition = document.getElementById('unete-transition');
+  const uneteTrack = document.getElementById('unete-track');
+  if (uneteTransition && uneteTrack && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let uneteTicking = false;
+    const updateUneteTransition = () => {
+      const rect = uneteTransition.getBoundingClientRect();
+      const scrollable = uneteTransition.offsetHeight - window.innerHeight;
+      const progress = scrollable > 0 ? Math.min(Math.max(-rect.top / scrollable, 0), 1) : 0;
+      uneteTrack.style.transform = `translateX(${-progress * 50}%)`;
+      uneteTicking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!uneteTicking) {
+        requestAnimationFrame(updateUneteTransition);
+        uneteTicking = true;
+      }
+    }, { passive: true });
+    updateUneteTransition();
+  }
+
   /* ── Timecode counter ─────────────────────────────────────── */
   const timecode = document.getElementById('timecode');
   if (timecode) {
