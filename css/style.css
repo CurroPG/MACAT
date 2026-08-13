@@ -372,9 +372,9 @@ ul, ol { list-style: none; }
 .hero__bg-image {
   position: absolute;
   inset: 0;
-  background-image: url('../imagenes/hero-sala-vacia.jpg');
+  background-image: url('../imagenes/fondo-hero.jpeg');
   background-size: cover;
-  background-position: center 35%;
+  background-position: center 30%;
   animation: hero-kenburns 26s ease-in-out infinite alternate;
 }
 @keyframes hero-kenburns {
@@ -404,9 +404,9 @@ ul, ol { list-style: none; }
   inset: 0;
   background: linear-gradient(
     160deg,
-    rgba(10, 10, 10, 0.65) 0%,
-    rgba(10, 10, 10, 0.35) 50%,
-    rgba(10, 10, 10, 0.75) 100%
+    rgba(10, 10, 10, 0.7) 0%,
+    rgba(10, 10, 10, 0.55) 50%,
+    rgba(10, 10, 10, 0.8) 100%
   );
 }
 
@@ -421,18 +421,6 @@ ul, ol { list-style: none; }
   background-size: 180px 180px;
   opacity: 0.06;
   mix-blend-mode: overlay;
-}
-
-.hero__timecode {
-  position: absolute;
-  top: calc(var(--nav-h) + 1.5rem);
-  right: 2rem;
-  font-size: 0.7rem;
-  font-weight: 400;
-  letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.4);
-  font-variant-numeric: tabular-nums;
-  pointer-events: none;
 }
 
 .hero__content {
@@ -480,28 +468,9 @@ ul, ol { list-style: none; }
   text-align: center;
 }
 
-.hero__tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
-  margin-bottom: 2.5rem;
-}
-.hero__tag::before {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 1px;
-  background: var(--accent);
-}
-
 .hero__headline {
   color: var(--white);
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
 }
 
 .hero__line { display: block; font-weight: 700; }
@@ -513,15 +482,6 @@ ul, ol { list-style: none; }
   font-size: 0.55em;
   margin-top: 0.4em;
   font-weight: 700;
-}
-
-.hero__sub {
-  max-width: 480px;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 3rem;
-  margin-inline: auto;
 }
 
 .hero__ctas {
@@ -1578,6 +1538,14 @@ ul, ol { list-style: none; }
 .form__group {
   margin-bottom: 1.25rem;
 }
+/* Honeypot anti-spam: oculto visualmente pero presente en el DOM. */
+.form__hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 .form__label {
   display: block;
   font-size: 0.72rem;
@@ -1613,6 +1581,15 @@ ul, ol { list-style: none; }
   margin-top: 0.75rem;
   line-height: 1.6;
 }
+.form__status {
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-top: 0.85rem;
+}
+.form__status:empty { display: none; }
+.form__status--success { color: #CFFFD6; }
+.form__status--error   { color: #FFE8A3; }
 
 /* Únete — el fondo pasó de negro a rojo de marca: refuerza el contraste
    de los campos del formulario, que ahí siguen leyéndose sobre rojo directo. */
@@ -2101,8 +2078,6 @@ ul, ol { list-style: none; }
 
   .colabs__strip { flex-direction: column; }
   .colab-logo { flex-direction: row; }
-
-  .hero__timecode { display: none; }
 
   .contacto__social { flex-wrap: wrap; }
 }

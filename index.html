@@ -70,8 +70,6 @@
   <span class="reg-mark reg-mark--light reg-mark--bl" aria-hidden="true"></span>
   <span class="reg-mark reg-mark--light reg-mark--br" aria-hidden="true"></span>
 
-  <span class="hero__timecode" id="timecode">00:00:00:00</span>
-
   <div class="container hero__content">
 
     <div class="hero__logo-stage">
@@ -79,18 +77,12 @@
     </div>
 
     <div class="hero__subtitles" id="hero-subtitles">
-      <p class="hero__tag hero__content-item" style="transition-delay:0.5s">UMA Experience · Universidad de Málaga · 2026</p>
-
       <h1 class="hero__headline display-1">
-        <span class="hero__line hero__content-item" style="transition-delay:0.6s">hacemos cine.</span>
-        <em class="hero__content-item" style="transition-delay:0.7s">creamos oportunidades<br>construimos comunidad</em>
+        <span class="hero__line hero__content-item" style="transition-delay:0.5s">hacemos cine.</span>
+        <em class="hero__content-item" style="transition-delay:0.6s">creamos oportunidades<br>construimos comunidad</em>
       </h1>
 
-      <p class="hero__sub hero__content-item" style="transition-delay:0.8s">
-        MACAT es el equipo audiovisual universitario de la UMA. Cortometrajes, documentales, videoclips, festivales y mucho más — hechos por estudiantes con ganas de crear.
-      </p>
-
-      <div class="hero__ctas hero__content-item" style="transition-delay:0.9s">
+      <div class="hero__ctas hero__content-item" style="transition-delay:0.7s">
         <a class="btn btn--outline" href="#que-es">conocer macat</a>
         <a class="btn btn--rec" href="#unete">únete al equipo</a>
       </div>
@@ -210,7 +202,7 @@
       <div class="cinefila__right" data-reveal="right" data-delay="2">
         <img
           class="cinefila__img"
-          src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80"
+          src="imagenes/cinefila.jpeg"
           alt="Sesión de cine en el cineclub Málaga Cinéfila"
           loading="lazy"
         >
@@ -253,6 +245,7 @@
   </div>
 </section>
 
+<div class="section-divider section-divider--light" aria-hidden="true"></div>
 
 <!-- ════════════════════════════════════════════════════════════
      EQUIPO
@@ -364,6 +357,7 @@
   </div>
 </section>
 
+<div class="section-divider section-divider--light" aria-hidden="true"></div>
 
 <!-- ════════════════════════════════════════════════════════════
      COLABORADORES Y PATROCINADORES
@@ -593,7 +587,11 @@
           <div class="unete__form-panel">
             <p class="eyebrow" style="color:rgba(255,255,255,.6);margin-bottom:1.5rem;">quiero unirme</p>
 
-            <form id="form-unete" novalidate>
+            <form id="form-unete" action="/api/unete" method="post" novalidate>
+              <div class="form__hp" aria-hidden="true">
+                <label for="unete-web">no rellenar este campo</label>
+                <input type="text" id="unete-web" name="web" tabindex="-1" autocomplete="off">
+              </div>
               <div class="form__group">
                 <label class="form__label" for="nombre">nombre completo</label>
                 <input class="form__input" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
@@ -632,6 +630,7 @@
                 <textarea class="form__textarea" id="motivo" name="motivo" placeholder="Cuéntanos brevemente qué te atrae de MACAT y qué podrías aportar (o qué te gustaría aprender)…"></textarea>
               </div>
               <button class="btn btn--rec" type="submit" style="width:100%;justify-content:center;padding:1rem;">enviar solicitud</button>
+              <p class="form__status" id="unete-status" role="status" aria-live="polite"></p>
               <p class="form__note">Responderemos en menos de 48 horas. Sin compromisos, sin filtros duros — solo una charla para conocernos.</p>
             </form>
           </div>
@@ -756,7 +755,11 @@
       </div>
 
       <div class="contacto__form" data-reveal data-delay="2">
-        <form id="form-contacto" novalidate>
+        <form id="form-contacto" action="/api/contacto" method="post" novalidate>
+          <div class="form__hp" aria-hidden="true">
+            <label for="contacto-web">no rellenar este campo</label>
+            <input type="text" id="contacto-web" name="web" tabindex="-1" autocomplete="off">
+          </div>
           <div class="form__group">
             <label class="form__label" for="c-nombre">nombre</label>
             <input class="form__input" type="text" id="c-nombre" name="nombre" placeholder="Tu nombre o el de tu organización" required>
@@ -782,6 +785,7 @@
             <textarea class="form__textarea" id="c-mensaje" name="mensaje" rows="5" placeholder="Cuéntanos qué tienes en mente…"></textarea>
           </div>
           <button class="btn btn--ghost" type="submit" style="width:100%;justify-content:center;padding:1rem;">enviar mensaje</button>
+          <p class="form__status" id="contacto-status" role="status" aria-live="polite"></p>
         </form>
       </div>
 

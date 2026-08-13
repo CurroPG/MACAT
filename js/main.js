@@ -97,21 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateUneteTransition();
   }
 
-  /* ── Timecode counter ─────────────────────────────────────── */
-  const timecode = document.getElementById('timecode');
-  if (timecode) {
-    let frames = 0, secs = 0, mins = 0, hrs = 0;
-    const fps = 24;
-    const pad = n => String(n).padStart(2, '0');
-    setInterval(() => {
-      frames++;
-      if (frames >= fps) { frames = 0; secs++; }
-      if (secs  >= 60)   { secs  = 0; mins++; }
-      if (mins  >= 60)   { mins  = 0; hrs++; }
-      timecode.textContent = `${pad(hrs)}:${pad(mins)}:${pad(secs)}:${pad(frames)}`;
-    }, 1000 / fps);
-  }
-
   /* ── Scroll reveal (Intersection Observer) ───────────────── */
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -297,21 +282,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ── Form submit (demo — just shows feedback) ────────────── */
-  document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', e => {
+  /* ── Envío de formularios (funciones serverless + Resend) ── */
+  const MSG_EXITO = '¡Solicitud enviada! Te responderemos en menos de 48 horas.';
+  const MSG_ERROR = 'Hubo un problema, escríbenos directamente a malagacineteam@gmail.com';
+
+  function setFormStatus(form, message, type) {
+    const status = form.querySelector('.form__status');
+    if (!status) return;
+    status.textContent = message;
+    status.classList.remove('form__status--success', 'form__status--error');
+    if (type) status.classList.add(`form__status--${type}`);
+  }
+
+  function initFormSubmit(form) {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
-      if (!btn) return;
-      const original = btn.textContent;
-      btn.textContent = '¡enviado!';
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.disabled = false;
-        form.reset();
-      }, 3000);
+      const original = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'enviando…'; }
+      setFormStatus(form, '', null);
+
+      try {
+        const res = await fetch(form.getAttribute('action'), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form).entries())),
+        });
+        const result = await res.json().catch(() => ({}));
+
+        if (res.ok && result.success) {
+          setFormStatus(form, MSG_EXITO, 'success');
+          form.reset();
+        } else {
+          setFormStatus(form, MSG_ERROR, 'error');
+        }
+      } catch {
+        setFormStatus(form, MSG_ERROR, 'error');
+      } finally {
+        if (btn) { btn.disabled = false; btn.textContent = original; }
+      }
     });
-  });
+  }
+
+  const formUnete = document.getElementById('form-unete');
+  const formContacto = document.getElementById('form-contacto');
+  if (formUnete) initFormSubmit(formUnete);
+  if (formContacto) initFormSubmit(formContacto);
 
 });

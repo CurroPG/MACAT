@@ -1,0 +1,9 @@
+{
+  "name": "macat-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page de MACAT (Málaga Cinematographic Audiovisual Team) con funciones serverless de Vercel para el envío de formularios.",
+  "dependencies": {
+    "resend": "^4.0.0"
+  }
+}
