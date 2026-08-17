@@ -76,12 +76,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ── Únete: transición pin — el collage+texto se desplaza a la
-     izquierda para revelar el formulario, ligado 1:1 al scroll ── */
+     izquierda para revelar el formulario, ligado 1:1 al scroll.
+     Solo en escritorio/tablet (>900px) — en móvil se queda el layout
+     normal apilado (foto arriba, formulario debajo), ver CSS. ── */
   const uneteTransition = document.getElementById('unete-transition');
   const uneteTrack = document.getElementById('unete-track');
-  if (uneteTransition && uneteTrack && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const uneteMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const uneteWidthQuery = window.matchMedia('(min-width: 901px)');
+  if (uneteTransition && uneteTrack) {
     let uneteTicking = false;
     const updateUneteTransition = () => {
+      if (uneteMotionQuery.matches || !uneteWidthQuery.matches) {
+        uneteTrack.style.transform = '';
+        uneteTicking = false;
+        return;
+      }
       const rect = uneteTransition.getBoundingClientRect();
       const scrollable = uneteTransition.offsetHeight - window.innerHeight;
       const progress = scrollable > 0 ? Math.min(Math.max(-rect.top / scrollable, 0), 1) : 0;
@@ -94,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         uneteTicking = true;
       }
     }, { passive: true });
+    window.addEventListener('resize', updateUneteTransition);
     updateUneteTransition();
   }
 

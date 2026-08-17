@@ -2055,6 +2055,45 @@ ul, ol { list-style: none; }
   .unete__grid      { grid-template-columns: 1fr; }
   .contacto__inner  { grid-template-columns: 1fr; }
   .noticias__grid   { grid-template-columns: 1fr 1fr; }
+
+  /* Únete: en móvil desactivamos el pin/sticky de scroll — layout
+     normal apilado (foto arriba, formulario debajo), sin desplazamiento
+     horizontal ligado al scroll. */
+  .unete__transition {
+    height: auto;
+    position: static;
+  }
+  .unete__transition-track {
+    position: static;
+    top: auto;
+    height: auto;
+    width: 100%;
+    display: block;
+    overflow: visible;
+    transform: none !important;
+  }
+  .unete__transition-panel {
+    flex: none;
+    width: 100%;
+    height: auto;
+    padding-top: 0;
+    display: block;
+  }
+  .unete__transition .unete__intro {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: auto;
+    padding-block: clamp(2.5rem, 10vw, 4rem);
+    margin-bottom: clamp(3rem, 8vw, 5rem);
+  }
+  .unete__form-panel {
+    max-height: none;
+    overflow-y: visible;
+    padding: 0 clamp(1.5rem, 4vw, 2rem);
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 640px) {
@@ -2080,6 +2119,18 @@ ul, ol { list-style: none; }
   .colab-logo { flex-direction: row; }
 
   .contacto__social { flex-wrap: wrap; }
+
+  .equipo-card__credit {
+    flex-wrap: wrap;
+    row-gap: 0.3rem;
+  }
+  .equipo-card__name,
+  .equipo-card__role {
+    white-space: normal;
+  }
+  .equipo-card__leader {
+    flex-basis: 100%;
+  }
 }
 
 @media (max-width: 400px) {
